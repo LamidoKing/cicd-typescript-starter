@@ -21,9 +21,8 @@ jobs:
         run: npm ci
 
       - name: Run Build 
-        run: npm run build
+        run: npm run builds
 
-    steps:
       - id: 'auth'
         uses: 'google-github-actions/auth@v2'
         with:
@@ -36,5 +35,5 @@ jobs:
         run: 'gcloud info'
 
       - name: 'Build image'
-      run: 'gcloud builds submit --tag us-central1-docker.pkg.dev/notely-468511/notely-ar-repo/notely:latest'
+        run: 'gcloud builds submit --tag us-central1-docker.pkg.dev/notely-468511/notely-ar-repo/notely:latest'
 
